@@ -34,7 +34,8 @@ class TooltipTrigger extends Component<
     placement: 'right',
     portalContainer: canUseDOM() ? document.body : null,
     trigger: 'hover',
-    usePortal: canUseDOM()
+    usePortal: canUseDOM(),
+    eventsEnabled: true
   };
 
   public state: TooltipTriggerState = {
@@ -61,13 +62,15 @@ class TooltipTrigger extends Component<
       usePortal,
       portalContainer,
       followCursor,
-      getTooltipRef
+      getTooltipRef,
+      eventsEnabled
     } = this.props;
 
     const popper = (
       <Popper
         innerRef={getTooltipRef}
         placement={placement}
+        eventsEnabled={eventsEnabled}
         modifiers={{
           ...DEFAULT_MODIFIERS,
           ...(followCursor && {
