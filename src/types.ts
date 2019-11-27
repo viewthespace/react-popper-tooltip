@@ -110,6 +110,13 @@ export interface TooltipTriggerProps {
    */
   usePortal: boolean;
   /**
+   * Tells react-popper to enable or disable the Popper.js event listeners.
+   * For more information, refer to Popper.js’ docs:
+   * @link https://popper.js.org/popper-documentation.html#Popper.Defaults.eventsEnabled
+   * @default true
+   */
+  eventsEnabled: boolean;
+  /**
    * Trigger
    */
   children(arg: ChildrenArg): React.ReactNode;
