@@ -82,6 +82,7 @@ class TooltipTrigger extends Component<
           }),
           ...modifiers
         }}
+        {...this.props}
       >
         {({
           ref,
